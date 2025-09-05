@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Website</title>
+  <link rel="stylesheet" href="googleclub.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .login {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-family: 'Doto', sans-serif;
+    }
+
+    #playBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 8px;
+      display: none; /* hidden by default */
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="small-vecteezy_4k-colored-neon-labyrinth-loop_23481713_small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <button id="playBtn">Tap to Play</button>
+
+  <div class="login">
+    <h1>Hello Retro</h1>
+    <p>This text is placed over a blurred background.</p>
+  </div>
+
+  <script>
+    const video = document.getElementById('bg-video');
+    const playBtn = document.getElementById('playBtn');
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    // Try to autoplay when video is ready
+    video.addEventListener('loadeddata', () => {
+      video.play().catch(err => {
+        console.warn("Autoplay blocked:", err);
+        playBtn.style.display = 'block'; // show fallback button
+      });
+    });
+
+    // Fallback button for Safari users
+    playBtn.addEventListener('click', () => {
+      video.play().then(() => {
+        playBtn.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>

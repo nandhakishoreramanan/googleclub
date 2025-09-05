@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Website</title>
+    <script src="googleclub.js"></script>
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="googleclub.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght,ROND@100..900,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video src="small-vecteezy_4k-colored-neon-labyrinth-loop_23481713_small.mp4" autoplay muted loop playsinline  id="bg-video">
+            
+        </video>
+    <div class="login">
+        
+    <h1  class="animate__animated animate__bounce">
+        Hello Retro 
+
+    </h1>
+    <div class = "wrapper">
+     <form class="login">   
+        <h1 id="log">Login</h1>
+        <div class="inputbox">
+            <input type="text" placeholder="Username" required>
+        </div>
+        <div class="inputbox">
+            <input type="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class=" remeberforget">
+            
+        </div>
+        <button type="submit" class="btn" id="btnn">Login</button> 
+        <div class="register">
+            <span id="txt">Don't have an account?</span> <a href="#" id="toggle">Register</a>
+     </form>
+    </div>
+    
+    
+    <script>
+        
+        const video = document.getElementById('bg-video');
+        video.muted = true;
+        video.play().catch(error => {
+            console.error('Error attempting to play the video:', error);
+        });
+
+
+    </script>
+   <script>
+  const title = document.getElementById("log");
+  const btn = document.getElementById("btnn");
+  const toggle = document.getElementById("toggle");
+  const txt = document.getElementById("txt");
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault(); // stop the page from refreshing on <a> click
+    
+    if (title.textContent === "Login") {
+      title.textContent = "Register";
+      btn.textContent = "Register";
+      toggle.textContent = "login";
+      txt.innerHTML = `Already have an account? `;
+      
+      
+    } else {
+      title.textContent = "Login";
+      btn.textContent = "Login";
+      toggle.textContent = "Register";
+      txt.innerHTML = `Don't have an account? `
+    }
+  });
+</script>
+    </div>
+    
+    
+</body>
+</html>

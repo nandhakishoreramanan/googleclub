@@ -1,0 +1,145 @@
+.login{
+    text-align: center;
+    font-family: 'Doto', serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: #fff;
+    
+   
+      /* or a fixed max like 600px */
+     
+    
+   
+}
+#bg-video {
+    position: fixed;
+    right: 0;
+
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover
+    ;
+    z-index: -1;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rbga(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper.inputbox{
+    width: 100%;
+    height: 50px;
+    margin: 36px 0;
+}
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border:none ;
+    outline: none;
+    border-radius: 40px;
+    border: 2px solid rgba(red, green, blue, alpha);
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+   
+}
+.inputbox input::placeholder{
+    color: #fff;
+   
+}
+.inputbox i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px ;
+}
+.wrapper .rememberforget{
+    display: flex;
+    font-size: 14.5px;
+    margin: -15px 0 15px ;
+    justify-content: space-between;
+    
+}
+.login{
+    margin-top: 10%;
+}
+.rememberforget label input{
+   accent-color: #fff;
+   margin-right: 3px;
+}
+.rememberforget a{
+    color: #fff;
+    text-decoration: none;
+}
+.rememberforget a:hover{
+    text-decoration: underline;}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: grey;
+    font-weight: 600;    
+
+}
+.wrapper .register{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px ;
+}
+.register a{
+    color: #fff;
+    text-decoration: none;
+}
+.register a:hover{
+    text-decoration: underline;
+}
+.register p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+@keyframes colorChange {
+  0%   { color: purple; }
+  25%  { color: blue; }
+  50%  { color: lightblue; }
+  75%  { color: pink; }
+  100% { color: red; }
+}
+button, input[type="submit"] {
+  cursor: pointer;
+}
+.animate__animated.animate__bounce {
+    margin-top: 0%;
+    animation:  lightSpeedInRight 2s , colorChange 4s steps(1, end) infinite;
+}
+body {
+    display: flex;
+    justify-content: center;   /* horizontal centering */
+    align-items: center;       /* vertical centering */
+    min-height: 100vh;         /* full screen height */
+    margin: 0;
+}
